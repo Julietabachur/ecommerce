@@ -1,8 +1,9 @@
 import './CartWidget.sass' ;
+import { TbShoppingCart } from "react-icons/tb";
 
 const CartWidget = () => {
   return (
-    <i class="bi bi-cart-fill"></i>
+    <TbShoppingCart size={20}/>
   )
 }
 
