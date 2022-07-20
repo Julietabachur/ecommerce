@@ -1,3 +1,4 @@
+import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.sass';
 
 const NavBar = () => {
@@ -11,14 +12,15 @@ const NavBar = () => {
             <div className="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
                 <ul className="navbar-nav mb-2 mb-lg-0">
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Home</a>
+                        <a className="nav-link" href="#">Home</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Productos</a>
+                        <a className="nav-link" href="#">Productos</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Nosotros</a>
+                        <a className="nav-link" href="#">Nosotros</a>
                     </li>
+                    <CartWidget/>
                 </ul>
             </div>
         </div>
