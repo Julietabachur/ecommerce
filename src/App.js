@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     <NavBar/>
-    <ItemListContainer section="Tortas"/>
+    {/* <ItemListContainer section="Tortas"/> */}
     </>
 );
 }
