@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
   }, [])
 
   return (
-        <ItemDetail dataProducts={listProduct}/>            
+        <ItemDetail dataProducts={listProduct} initial={1}/>            
 )
 }
 
