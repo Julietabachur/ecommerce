@@ -1,30 +1,24 @@
+import "./ItemDetail.sass"
 
 const ItemDetail = ({dataProducts}) => {
-  return (
-    <>
-        {dataProducts.map((product)=>{
-
-          const {id,title,price,image,image1,image2,image3,stock} = product
-
-          
-            
-            return (
-
-              <div key={id}>   
-                <div>
-                  
-                </div>           
-                <image src={image}/>
-                <div>
-                  <h2>{title}</h2>
-                  <span>$ {price}</span>
-                </div>
-
-              </div>
-            )
-
-        })}
-    </>
+  
+  const {id,title,price,image,image1,image2,image3} = dataProducts
+  
+  return (         
+        <div key={id} className="d-flex flex-row align-center justify-content-around">   
+          <div className="d-flex flex-column justify-content-center align-center">
+            <image src={image}  className="foto-principal"/>   
+            <div className="d-flex flex-row justify-content-between fotos">
+              <image src={image1} className="foto-secundaria"/>
+              <image src={image2} className="foto-secundaria"/>
+              <image src={image3} className="foto-secundaria"/>
+            </div>               
+          </div>           
+          <div className="info d-flex flex-column align-center justify-content-around">
+            <h2>{title}</h2>
+            <span>$ {price}</span>
+          </div>
+        </div>            
   )
 }
 
