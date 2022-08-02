@@ -3,7 +3,7 @@ import "./ItemDetail.sass"
 
 const ItemDetail = ({dataProducts, initial}) => {
   
-  const {id,title,price,image,image1,image2,image3, stock} = dataProducts
+  const {id,title,price,image,image1,image2,image3,stock} = dataProducts
 
   const [contador, setContador] = useState(initial)
 
