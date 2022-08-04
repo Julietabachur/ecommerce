@@ -80,7 +80,7 @@ const products = [
         id:8,
         title: "Tartas",
         price: 2500,
-        image: 'img/tarta3.jpg',
+        image: 'img/tarta3.PNG',
         image1: 'img/tarta1.jpg',
         image2: 'img/tarta2.jpg',
         image3: 'img/pastafrola.jpg',
@@ -102,12 +102,12 @@ const products = [
         id:10,
         title:"Cuadrados dulces",
         price: false,
-        image: 'img/lemonPie.jpg',
-        image1: 'img/lemonPie1.jpg',
-        image2: 'img/lemonPie2.jpg',
-        image3: false,
+        image: 'img/lemonies.PNG',
+        image1: 'img/brownie1.jpg',
+        image2: 'img/brownie2.jpg',
+        image3: 'img/brownie4.jpg',
         stock: 10,
-        categoria: "alfajor"
+        categoria: "torta"
     },
     {
         id:11,
@@ -164,23 +164,13 @@ const products = [
         stock: 10,
         categoria: "torta"
     },
-    {
-        id:16,
-        title:"Number/Letter Cake",
-        price: 6000,
-        image: 'img/cookieCake.jpg',
-        image1: 'img/cookieCake1.jpg',
-        image2: 'img/cookieCake2.jpg',
-        image3: 'img/cookieCake3.jpg',
-        stock: 10,
-        categoria: "torta"
-    },
+   
     {
         id:17,
-        title:"Number/Letter Cake",
+        title:"NumberLetter Cake",
         price: 6000,
-        image: 'img/numberCake1.jpg',
         image1: 'img/numberCake.jpg',
+        image: 'img/numberCake1.jpg',
         image2: false,
         image3: false,
         stock: 10,

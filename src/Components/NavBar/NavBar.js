@@ -16,16 +16,7 @@ const NavBar = () => {
                         <Link to={"/"} className="nav-link" >Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to={"/productos"} className="nav-link" >Tortas</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to={"/productos"} className="nav-link" >Postres</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to={"/productos"} className="nav-link" >Alfajores</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to={"/productos"} className="nav-link" >Salado</Link>
+                        <Link to={"/productos"} className="nav-link" >Productos</Link>
                     </li>
                     <li className="nav-item">
                         <Link to={"/contacto"} className="nav-link" >Contacto</Link>

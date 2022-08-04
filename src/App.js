@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Contacto from './pages/Contacto';
 import Cart from './pages/Cart';
 import Detail from './pages/Detail';
+import Products from './pages/Products';
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path='/' element={ <Home/> }/>
-        <Route path='/category/:id' element={<ItemListContainer/>}/>
-        <Route path='/item/:id' element={<Detail/>}/>
+        <Route path='/Products' element={ <Products/> }/>
+        <Route path='/category/:category' element={<ItemListContainer/>}/>
+        <Route path='/category/:id' element={<ItemDetailContainer/>}/>
         <Route path='/contacto' element={ <Contacto/> }/>
         <Route path='/cart' element={ <Cart/> }/>
       </Routes>

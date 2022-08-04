@@ -24,7 +24,7 @@ const ItemListContainer = ({section}) => {
   }, [])
 
   return (
-    <div className="d-flex row flex-wrap">
+    <div className="d-flex flex-row flex-wrap">
         <h1 className="display-1 d-flex justify-content-center">{section}</h1>
         <ItemList dataProducts={listProducts} />
     </div>

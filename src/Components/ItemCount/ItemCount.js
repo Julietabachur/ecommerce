@@ -19,9 +19,9 @@ const ItemCount = ({data, initial, onAdd , onRemove}) => {
 
   return (
 
-    <Link to={`/productos/${id}`}>
-        <div className="card col w-25 align-items-center m-1 p-2 justify-content-around flex-wrap">
-            <img src={`img/${image}`} alt="Imagen producto"/>
+    <Link to={`/productos/${id}`} >
+        <div className="card col w-100 align-items-center m-4 p-2 justify-content-around flex-wrap">
+            <img src={`/${image}`} alt="Imagen producto"/>
             <p>{title}</p>
             <span>$ {price}</span>
             <div className="d-flex justify-content-s my-5">
