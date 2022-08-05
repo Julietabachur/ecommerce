@@ -8,7 +8,7 @@ const products = [
         image2: 'img/cheesecake2.jpg',
         image3: 'img/cheesecake3.jpg',
         stock: 10,
-        categoria: "torta"
+        category: "tortas"
     },
     {
         id:2,
@@ -19,7 +19,7 @@ const products = [
         image2: 'img/brownie2.PNG',
         image3: 'img/brownie3.jpg',
         stock: 10,
-        categoria: "torta"
+        category: "tortas"
     },
     {
         id:3,
@@ -30,7 +30,7 @@ const products = [
         image2: 'img/tiramissu2.jpg',
         image3: false,
         stock: 10,
-        categoria: "torta"
+        category: "tortas"
     },
     {
         id:4,
@@ -41,7 +41,7 @@ const products = [
         image2: false,
         image3: false,
         stock: 10,
-        categoria: "alfajor"
+        category: "alfajores"
     },
     {
         id:5,
@@ -52,7 +52,7 @@ const products = [
         image2: false,
         image3: false,
         stock: 10,
-        categoria: "alfajor"
+        category: "alfajores"
     },
     {
         id:6,
@@ -63,7 +63,7 @@ const products = [
         image2: false,
         image3: false,
         stock: 10,
-        categoria: "alfajor"
+        category: "alfajores"
     },
     {
         id:7,
@@ -74,7 +74,7 @@ const products = [
         image2: 'img/ricota2.jpg',
         image3: false,
         stock: 10,
-        categoria: "torta"
+        category: "tortas"
     },
     {
         id:8,
@@ -85,7 +85,7 @@ const products = [
         image2: 'img/tarta2.jpg',
         image3: 'img/pastafrola.jpg',
         stock: 10,
-        categoria: "torta"
+        category: "tortas"
     },
     {
         id:9,
@@ -96,7 +96,7 @@ const products = [
         image2: 'img/lemonPie2.jpg',
         image3: false,
         stock: 10,
-        categoria: "alfajor"
+        category: "tortas"
     }, 
     {
         id:10,
@@ -107,7 +107,7 @@ const products = [
         image2: 'img/brownie2.jpg',
         image3: 'img/brownie4.jpg',
         stock: 10,
-        categoria: "torta"
+        category: "tortas"
     },
     {
         id:11,
@@ -118,7 +118,7 @@ const products = [
         image2: 'img/chocotorta2.jpg',
         image3: 'img/chocotorta3.jpg',
         stock: 10,
-        categoria: "torta"
+        category: "tortas"
     },
     {
         id:12,
@@ -129,7 +129,7 @@ const products = [
         image2: false,
         image3: false,
         stock: 10,
-        categoria: "postre"
+        category: "postres"
     },
     {
         id:13,
@@ -140,7 +140,7 @@ const products = [
         image2: false,
         image3: false,
         stock: 10,
-        categoria: "postre"
+        category: "postres"
     },
     {
         id:14,
@@ -151,7 +151,7 @@ const products = [
         image2: false,
         image3: false,
         stock: 10,
-        categoria: "postre"
+        category: "postres"
     },
     {
         id:15,
@@ -162,7 +162,7 @@ const products = [
         image2: 'img/cookieCake2.jpg',
         image3: 'img/cookieCake3.jpg',
         stock: 10,
-        categoria: "torta"
+        category: "tortas"
     },
    
     {
@@ -174,7 +174,7 @@ const products = [
         image2: false,
         image3: false,
         stock: 10,
-        categoria: "torta"
+        category: "tortas"
     },
     {
         id:18,
@@ -185,7 +185,7 @@ const products = [
         image2: false,
         image3: false,
         stock: 10,
-        categoria: "salado"
+        category: "salado"
     },
     {
         id:19,
@@ -196,7 +196,7 @@ const products = [
         image2: false,
         image3: false,
         stock: 10,
-        categoria: "salado"
+        category: "salado"
     }
 ]
 

@@ -15,15 +15,24 @@ const NavBar = () => {
                     <li className="nav-item">
                         <Link to={"/"} className="nav-link" >Home</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link to={"/productos"} className="nav-link" >Productos</Link>
-                    </li>
+                    <li className="nav-item dropdown">
+                        <Link to={"/productos"} className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </Link>
+                        <ul className="dropdown-menu">
+                            <li><Link className="dropdown-item" to={"/category/tortas"}>Tortas</Link></li>
+                            <li><Link className="dropdown-item" to={"/category/alfajores"}>Alfajores</Link></li>
+                            <li><Link className="dropdown-item" to={"/category/salado"}>Salado</Link></li>
+                            <li><Link className="dropdown-item" to={"/category/postres"}>Postres</Link></li>
+                        </ul>
+                    </li>  
                     <li className="nav-item">
                         <Link to={"/contacto"} className="nav-link" >Contacto</Link>
                     </li>
                     <li className="nav-item">
                         <Link to={"/Cart"}  className="nav-link"><CartWidget/></Link>
-                    </li>                    
+                    </li>                
+                      
                 </ul>
             </div>
         </div>

@@ -17,23 +17,22 @@ const ItemCount = ({data, initial, onAdd , onRemove}) => {
     }
 
 
-  return (
-
-    <Link to={`/productos/${id}`} >
-        <div className="card col w-100 align-items-center m-4 p-2 justify-content-around flex-wrap">
-            <img src={`/${image}`} alt="Imagen producto"/>
-            <p>{title}</p>
-            <span>$ {price}</span>
-            <div className="d-flex justify-content-s my-5">
-                <button onClick={onRemove} className="btn btn-outline-danger h-1 border-3 rounded-5">-</button>
+  return (    
+        <div className="card flex-col align-items-center m-4 p-2 justify-content-between flex-wrap">
+            <Link to={`/productos/${id}`} >
+                <img src={`/${image}`} alt="Imagen producto"/>
+                <p className="fw-bold">{title}</p>
+            </Link>            
+            <span className="fw-bold">$ {price}</span>
+            <div className="d-flex justify-content-center my-2">
+                <button onClick={onRemove} className="btn h-1 border-3 rounded-5">-</button>
                 <p className="m-3">{contador}</p>
-                <button onClick={onAdd} className="btn btn-outline-danger border-3 rounded-5">+</button>
+                <button onClick={onAdd} className="btn border-3 rounded-5">+</button>
             </div>
-            <button className="btn btn-outline-danger">COMPRAR</button>
+            <Link to={`/productos/${id}`}>
+                <button className="btn">COMPRAR</button>
+            </Link>            
         </div>
-    </Link>
-    
-    
   )
 }
 

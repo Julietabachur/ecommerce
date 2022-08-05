@@ -2,15 +2,25 @@ import ItemList from "../ItemList/ItemList";
 import products from "../Utils/products.mock";
 import  "./ItemListContainer.sass";
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({section}) => {
 
   const [listProducts, setListProducts] = useState([])
 
+  const {category} = useParams()
+
+  const filterByCategory = products.filter( (product)=> product.category === category)
+
   const getProducts = new Promise( (resolve, reject) => {
       setTimeout( () => {
-          resolve(products)
-      }, 2000)
+
+          if(category){
+              resolve(filterByCategory)
+          } else {
+            resolve(products)
+          }
+      }, 200)
   })
 
   useEffect(() => {
@@ -24,7 +34,7 @@ const ItemListContainer = ({section}) => {
   }, [])
 
   return (
-    <div className="d-flex flex-row flex-wrap">
+    <div className="d-flex flex-row justify-content-center flex-wrap">
         <h1 className="display-1 d-flex justify-content-center">{section}</h1>
         <ItemList dataProducts={listProducts} />
     </div>
