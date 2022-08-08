@@ -35,7 +35,7 @@ const ItemListContainer = ({section}) => {
   const tituloLista = category === undefined ? "Productos" : category
 
   return (
-    <div className="d-flex flex-row justify-content-center flex-wrap">
+    <div className="d-flex flex-column justify-content-center flex-wrap">
         <h1 className="display-1 d-flex justify-content-center">{`${tituloLista}`}</h1>
         <ItemList dataProducts={listProducts} />
     </div>

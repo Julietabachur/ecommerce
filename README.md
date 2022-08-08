@@ -1,28 +1,20 @@
-# Getting Started with Create React App
+# Dolce Julieta - Tienda de pasteleria
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Historia
 
-## Available Scripts
+Mi nombre es Julieta. Soy pastelera y estduainte de desarrollo front end react y estoy aprovechando esta oportunidad para finalmente crear un  ecommerce para mi propio emprendimiento.
 
-In the project directory, you can run:
+### `Bootstrap`
 
-### `npm start`
+Para agilizar el diseño utilicé Bootstrap.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `React Icons`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+También instalé React-Icons para que mi siio se vea más divertido!
 
-### `npm test`
+### `Ract-Router-Dom`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Lo instalé para que mi sitio sea navegable.
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
