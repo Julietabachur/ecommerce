@@ -14,8 +14,7 @@ const ItemListContainer = ({section}) => {
 
   const getProducts = new Promise( (resolve, reject) => {
       setTimeout( () => {
-
-          if(category){
+          if(category == "Tortas" || category == "Postres" || category == "Alfajores" || category == "Salado") {
               resolve(filterByCategory)
           } else {
             resolve(products)
@@ -31,11 +30,13 @@ const ItemListContainer = ({section}) => {
           .catch( (error) => { 
               console.log("la llamada fallo")
           })
-  }, [])
+  }, [category])
+
+  const tituloLista = category === undefined ? "Productos" : category
 
   return (
     <div className="d-flex flex-row justify-content-center flex-wrap">
-        <h1 className="display-1 d-flex justify-content-center">{section}</h1>
+        <h1 className="display-1 d-flex justify-content-center">{`${tituloLista}`}</h1>
         <ItemList dataProducts={listProducts} />
     </div>
   )

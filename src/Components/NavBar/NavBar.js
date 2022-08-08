@@ -20,10 +20,10 @@ const NavBar = () => {
                             Productos
                         </Link>
                         <ul className="dropdown-menu">
-                            <li><Link className="dropdown-item" to={"/category/tortas"}>Tortas</Link></li>
-                            <li><Link className="dropdown-item" to={"/category/alfajores"}>Alfajores</Link></li>
-                            <li><Link className="dropdown-item" to={"/category/salado"}>Salado</Link></li>
-                            <li><Link className="dropdown-item" to={"/category/postres"}>Postres</Link></li>
+                            <li><Link className="dropdown-item" to={"/category/Tortas"}>Tortas</Link></li>
+                            <li><Link className="dropdown-item" to={"/category/Alfajores"}>Alfajores</Link></li>
+                            <li><Link className="dropdown-item" to={"/category/Salado"}>Salado</Link></li>
+                            <li><Link className="dropdown-item" to={"/category/Postres"}>Postres</Link></li>
                         </ul>
                     </li>  
                     <li className="nav-item">

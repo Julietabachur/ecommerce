@@ -18,11 +18,11 @@ const ItemDetail = ({dataProducts, initial}) => {
   return (         
         <div key={id} className="d-flex flex-row align-items-center justify-content-between m-5 contenedor-detail">   
           <div className="d-flex flex-column justify-content-center align-items-center ms-5">
-            <img src={image}  className="foto-principal"/>   
+            <img src={`/${image}`}  className="foto-principal"/>   
             <div className="d-flex flex-row justify-content-around fotos m-3">
-              <img src={image1} className="foto-secundaria"/>
-              <img src={image2} className="foto-secundaria"/>
-              <img src={image3} className="foto-secundaria"/>
+              <img src={`/${image1}`} className="foto-secundaria" placeholder="no disponible"/>
+              <img src={`/${image2}`} className="foto-secundaria" placeholder="no disponible"/>
+              <img src={`/${image3}`} className="foto-secundaria" placeholder="no disponible"/>
             </div>               
           </div>           
           <div className=" d-flex flex-column align-items-center justify-content-around me-5">
