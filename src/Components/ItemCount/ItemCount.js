@@ -1,38 +1,33 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
 import "./ItemCount.sass"
 
-const ItemCount = ({data, initial, onAdd , onRemove}) => {
+const ItemCount = ({setQuantitySelected }) => {
 
-    const {title, price, image, stock, id} = data
 
-    const [contador, setContador] = useState(initial)
+    const [countQuantity, setCountQuantity] = useState(1)
 
     function onAdd() {
-        contador < stock && setContador(contador+1)
+        setQuantitySelected(countQuantity)
     }
 
-    function onRemove() {
-        contador > initial && setContador(contador-1)
+    function addQuantity() {
+        setCountQuantity(countQuantity+1)
+    }
+
+    function removeQuantity() {
+       setCountQuantity(countQuantity-1)
     }
 
 
-  return (    
-        <div className="card flex-col align-items-center m-4 p-2 justify-content-between flex-wrap">
-            <Link to={`/productos/${id}`} >
-                <img src={`/${image}`} alt="Imagen producto"/>
-                <p className="fw-bold">{title}</p>
-            </Link>            
-            <span className="fw-bold">$ {price}</span>
-            <div className="d-flex justify-content-center my-2">
-                <button onClick={onRemove} className="btn h-1 border-3 rounded-5">-</button>
-                <p className="m-3">{contador}</p>
-                <button onClick={onAdd} className="btn border-3 rounded-5">+</button>
+  return (            
+            <div className="d-flex justify-content-center flex-column my-2">
+                <div className="d-flex justify-content-center flex-row my-2">
+                    <button onClick={removeQuantity} className="btn h-1 border-3 rounded-5">-</button>
+                    <p className="m-3">{countQuantity}</p>
+                    <button onClick={addQuantity} className="btn border-3 rounded-5">+</button>
+                </div>
+                <button className="btn" onClick={onAdd}>AGREGAR AL CARRITO</button>
             </div>
-            <Link to={`/productos/${id}`}>
-                <button className="btn">COMPRAR</button>
-            </Link>            
-        </div>
   )
 }
 
