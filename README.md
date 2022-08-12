@@ -2,7 +2,7 @@
 
 ## Historia
 
-Mi nombre es Julieta. Soy pastelera y estduainte de desarrollo front end react y estoy aprovechando esta oportunidad para finalmente crear un  ecommerce para mi propio emprendimiento.
+Mi nombre es Julieta. Soy pastelera y estudiante de Desarrollo Frontend React y estoy aprovechando esta oportunidad para finalmente crear un ecommerce para mi propio emprendimiento.
 
 ### `Bootstrap`
 
