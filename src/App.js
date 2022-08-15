@@ -7,21 +7,24 @@ import Detail from './pages/Detail';
 import Products from './pages/Products';
 import Footer from './Components/Footer/Footer';
 import Checkout from './pages/Checkout';
+import CartProvider from './Context/CartContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        <Route path='/' element={ <Home/> }/>
-        <Route path='/Products' element={ <Products/> }/>
-        <Route path='/category/:category' element={<Products/>}/>
-        <Route path='/productos/:id' element={<Detail/>}/>
-        <Route path='/contacto' element={ <Contacto/> }/>
-        <Route path='/cart' element={ <Checkout/> }/>
-      </Routes>
-      <Footer/>
-    </BrowserRouter>    
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={ <Home/> }/>
+          <Route path='/Products' element={ <Products/> }/>
+          <Route path='/category/:category' element={<Products/>}/>
+          <Route path='/productos/:id' element={<Detail/>}/>
+          <Route path='/contacto' element={ <Contacto/> }/>
+          <Route path='/cart' element={ <Checkout/> }/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>    
+    </CartProvider>
    
 );
 }
