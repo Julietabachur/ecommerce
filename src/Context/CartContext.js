@@ -1,12 +1,14 @@
 import { createContext, useState } from "react";
 
 
-
 export const CartContext = createContext()
 
 const CartProvider = ({children}) => {
-    
+
     const [cartProducts, setCartProducts]=useState([])
+    
+    const [countQuantity, setCountQuantity] = useState(1)
+
 
     const addToCart=(product)=>{
 
@@ -32,7 +34,7 @@ const CartProvider = ({children}) => {
       };
 
 
-    const data = {cartProducts, addToCart, clear, removeFromCart}
+    const data = {cartProducts, addToCart, clear, removeFromCart,countQuantity,setCountQuantity}
   return (
     <CartContext.Provider value={data} >
         {children}

@@ -1,23 +1,24 @@
-import { useState, useContext } from "react";
-import "./ItemCount.sass";
-import {CartContext} from "../../../Context/CartContext"
+import { useContext } from "react"
+import "./ItemCount.sass"
+import {CartContext} from "../../Context/CartContext"
 
-const ItemCount = ({setQuantitySelected }) => {
+const ItemCount = ({setQuantitySelected, productData }) => {
 
+    const { addToCart, countQuantity, setCountQuantity} = useContext(CartContext);
 
-    const [countQuantity, setCountQuantity] = useState(1)
+    const {stock}=productData
 
-    function addToCart(e) {
-        e.preventPropagation()
+    function onAdd() {
+        addToCart(productData)
         setQuantitySelected(countQuantity)
     }
 
     function addQuantity() {
-        setCountQuantity(countQuantity+1)
+        countQuantity < stock && setCountQuantity(countQuantity + 1);
     }
 
     function removeQuantity() {
-       setCountQuantity(countQuantity-1)
+        countQuantity > 1 && setCountQuantity(countQuantity-1)
     }
 
 
@@ -28,7 +29,7 @@ const ItemCount = ({setQuantitySelected }) => {
                     <p className="m-3">{countQuantity}</p>
                     <button onClick={addQuantity} className="btn border-3 rounded-5">+</button>
                 </div>
-                <button className="btn" onClick={addToCart}>AGREGAR AL CARRITO</button>
+                <button className="btn" onClick={onAdd}>AGREGAR AL CARRITO</button>
             </div>
   )
 }
