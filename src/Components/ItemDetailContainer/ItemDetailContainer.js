@@ -11,10 +11,12 @@ const ItemDetailContainer = () => {
   const {id} = useParams()
 
   const filterById = () => { 
-    products.some ( (product) => {
-    if(product.id == id) {
-      setProductData(product)}
-    })
+
+    products.some ( (product) => {              
+          if(product.id === id) {
+            setProductData(product)
+          }  
+      })
   }
 
   useEffect(() => {
@@ -25,6 +27,5 @@ const ItemDetailContainer = () => {
         <ItemDetail dataProducts={productData} initial={1}/>            
 )
 }
-
 
 export default ItemDetailContainer

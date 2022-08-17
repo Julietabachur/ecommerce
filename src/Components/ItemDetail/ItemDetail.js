@@ -1,14 +1,16 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
 import ItemCount from "../ItemCount/ItemCount"
 import "./ItemDetail.sass"
+import {CartContext} from "../../Context/CartContext"
+import { useContext } from "react"
 
 const ItemDetail = ({dataProducts}) => {
   
   const {id,title,price,image,image1,image2,image3,stock} = dataProducts
 
- const [quantitySelected, setQuantitySelected] = useState(0)
-  
+  const { quantitySelected, setQuantitySelected} = useContext(CartContext);
+
+ 
   return (         
         <div key={id} className="d-flex flex-row align-items-center justify-content-between m-5 contenedor-detail">   
           <div className="d-flex flex-column justify-content-center align-items-center ms-5">

@@ -4,7 +4,7 @@ import  "./ItemListContainer.sass";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({section}) => {
+const ItemListContainer = () => {
 
   const [listProducts, setListProducts] = useState([])
 
@@ -14,7 +14,7 @@ const ItemListContainer = ({section}) => {
 
   const getProducts = new Promise( (resolve, reject) => {
       setTimeout( () => {
-          if(category == "Tortas" || category == "Postres" || category == "Alfajores" || category == "Salado") {
+          if(category === "Tortas" || category === "Postres" || category === "Alfajores" || category === "Salado") {
               resolve(filterByCategory)
           } else {
             resolve(products)

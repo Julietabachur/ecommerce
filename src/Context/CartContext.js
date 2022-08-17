@@ -6,21 +6,25 @@ export const CartContext = createContext()
 const CartProvider = ({children}) => {
 
     const [cartProducts, setCartProducts]=useState([])
+    const [quantitySelected, setQuantitySelected] = useState(0)
+    const [totalProducts, setTotalProducts] = useState(0)
+    const [totalPrice, setTotalPrice] = useState(0)
     
-    const [countQuantity, setCountQuantity] = useState(1)
 
 
     const addToCart=(product)=>{
-
         const productIndex = cartProducts.findIndex( (productInCart) => productInCart.id === product.id)
 
         if (productIndex === -1) {
             setCartProducts([...cartProducts, product]);
+            setTotalProducts(totalProducts + product.countQuantity)
+            setTotalPrice(totalPrice + product.countQuantity)
         } else {
-        const cartProductsCopy = [...cartProducts];
-        cartProductsCopy[productIndex].countQuantity =
-        cartProductsCopy[productIndex].countQuantity + product.countQuantity;
+            const cartProductsCopy = [...cartProducts];
+            cartProductsCopy[productIndex].countQuantity =
+            cartProductsCopy[productIndex].countQuantity + product.countQuantity;
             setCartProducts(cartProductsCopy);
+            setTotalProducts(totalProducts + product.countQuantity)
         }
     }
 
@@ -34,7 +38,7 @@ const CartProvider = ({children}) => {
       };
 
 
-    const data = {cartProducts, addToCart, clear, removeFromCart,countQuantity,setCountQuantity}
+    const data = {cartProducts, addToCart, clear, removeFromCart, quantitySelected, setQuantitySelected,totalProducts}
   return (
     <CartContext.Provider value={data} >
         {children}
