@@ -2,8 +2,7 @@ import { useContext, useState } from "react"
 import "./ItemCount.sass"
 import {CartContext} from "../../Context/CartContext"
 
-const ItemCount = ({setQuantitySelected, productData }) => {
-    
+const ItemCount = ({setQuantitySelected, productData }) => {    
     
     const [countQuantity, setCountQuantity] = useState(1)
 
@@ -12,7 +11,7 @@ const ItemCount = ({setQuantitySelected, productData }) => {
     const {stock}=productData
 
     function onAdd() {
-        addToCart(productData)
+        addToCart({...productData, quantity: countQuantity})
         setQuantitySelected(countQuantity)
     }
 

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-    const {cartProducts, removeFromCart, clear, } = useContext(CartContext)
+    const {cartProducts, removeFromCart, clear} = useContext(CartContext)
 
   return (
     <>
@@ -20,7 +20,7 @@ const Cart = () => {
                     <p className='fs-3' >{product.title}</p>
                     <p className='fs-3' >U:${product.price}</p>
                     <p className='fs-3' >Cantidad: {product.countQuantity}</p>
-                    <p className='fs-3'> Total por producto: ${product.price*countQuantity}</p>
+                    <p className='fs-3'> Total por producto: ${product.price*product.countQuantity}</p>
                     <button className="d-flex flex-row justify-content-center align-items-center botones border border-light border-4 rounded-3"><IoTrash onClick={removeFromCart}/>Eliminar producto</button>                      
                   </div>
               </div>)

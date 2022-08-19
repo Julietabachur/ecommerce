@@ -12,13 +12,44 @@ const CartProvider = ({children}) => {
     
 
 
+    // const addToCart = (product) => {
+
+    //   const productInCart = cartProducts.find( item => item.id === product.id )
+      
+    //    if (productInCart){
+
+    //    const copyArray = cartProducts.map ((item) => {
+          
+    //       if(item.id === product.id){
+    //           return {
+    //               ...item,
+    //               quantity: item.quantity + product.quantity,
+    //           }
+    //       }         
+
+    //      else{
+    //         return item            
+
+    //       }})
+          
+    //       setcartProducts(copyArray)}
+
+    //    else{
+    //       setcartProducts([...cartProducts, product])      
+
+    //    }      
+      
+    //   settotalPrice(totalPrice + product.quantity * product.price)
+
+
+
     const addToCart=(product)=>{
         const productIndex = cartProducts.findIndex( (productInCart) => productInCart.id === product.id)
 
         if (productIndex === -1) {
             setCartProducts([...cartProducts, product]);
             setTotalProducts(totalProducts + product.countQuantity)
-            setTotalPrice(totalPrice + product.countQuantity)
+            setTotalPrice(totalPrice + product.price)
         } else {
             const cartProductsCopy = [...cartProducts];
             cartProductsCopy[productIndex].countQuantity =
