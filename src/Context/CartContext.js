@@ -39,7 +39,7 @@ const CartProvider = ({children}) => {
 
     //    }      
       
-    //   settotalPrice(totalPrice + product.quantity * product.price)
+    //   
 
 
 
@@ -48,28 +48,36 @@ const CartProvider = ({children}) => {
 
         if (productIndex === -1) {
             setCartProducts([...cartProducts, product]);
-            setTotalProducts(totalProducts + product.countQuantity)
+            setTotalProducts(totalProducts + product.quantity)
             setTotalPrice(totalPrice + product.price)
         } else {
             const cartProductsCopy = [...cartProducts];
             cartProductsCopy[productIndex].countQuantity =
-            cartProductsCopy[productIndex].countQuantity + product.countQuantity;
+            cartProductsCopy[productIndex].countQuantity + product.quantity;
             setCartProducts(cartProductsCopy);
             setTotalProducts(totalProducts + product.countQuantity)
         }
+
+        setTotalPrice(totalPrice + product.quantity * product.price)
     }
 
     const clear=()=>{
         setCartProducts([])
+        setTotalPrice(0)
+        setTotalProducts(0)
+        console.log(cartProducts);
     }
 
     const removeFromCart = (id) => {
-        const newCart = cartProducts.filter((product) => product.id !== id);
+        const newCart = cartProducts.filter((productInCart) => productInCart.id !== id);
         setCartProducts(newCart);
+
+        const prod = cartProducts.find(product => product.id === id)
+        setTotalPrice (totalPrice - prod.quantity * prod.price)
       };
 
 
-    const data = {cartProducts, addToCart, clear, removeFromCart, quantitySelected, setQuantitySelected,totalProducts}
+    const data = {cartProducts, addToCart, clear, removeFromCart, quantitySelected, setQuantitySelected,totalProducts, totalPrice}
   return (
     <CartContext.Provider value={data} >
         {children}
