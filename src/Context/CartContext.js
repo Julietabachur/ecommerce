@@ -12,37 +12,6 @@ const CartProvider = ({children}) => {
     
 
 
-    // const addToCart = (product) => {
-
-    //   const productInCart = cartProducts.find( item => item.id === product.id )
-      
-    //    if (productInCart){
-
-    //    const copyArray = cartProducts.map ((item) => {
-          
-    //       if(item.id === product.id){
-    //           return {
-    //               ...item,
-    //               quantity: item.quantity + product.quantity,
-    //           }
-    //       }         
-
-    //      else{
-    //         return item            
-
-    //       }})
-          
-    //       setcartProducts(copyArray)}
-
-    //    else{
-    //       setcartProducts([...cartProducts, product])      
-
-    //    }      
-      
-    //   
-
-
-
     const addToCart=(product)=>{
         const productIndex = cartProducts.findIndex( (productInCart) => productInCart.id === product.id)
 
@@ -51,11 +20,13 @@ const CartProvider = ({children}) => {
             setTotalProducts(totalProducts + product.quantity)
             setTotalPrice(totalPrice + product.price)
         } else {
+
             const cartProductsCopy = [...cartProducts];
-            cartProductsCopy[productIndex].countQuantity =
-            cartProductsCopy[productIndex].countQuantity + product.quantity;
+
+            cartProductsCopy[productIndex].quantity =  cartProductsCopy[productIndex].quantity + product.quantity;
+
             setCartProducts(cartProductsCopy);
-            setTotalProducts(totalProducts + product.countQuantity)
+            setTotalProducts(totalProducts + product.quantity)
         }
 
         setTotalPrice(totalPrice + product.quantity * product.price)
@@ -65,7 +36,6 @@ const CartProvider = ({children}) => {
         setCartProducts([])
         setTotalPrice(0)
         setTotalProducts(0)
-        console.log(cartProducts);
     }
 
     const removeFromCart = (id) => {

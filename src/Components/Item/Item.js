@@ -6,7 +6,7 @@ import { useContext } from "react"
 
 const Item = ({dataProduct}) => {
 
-    const {title, price, image, id, stock} = dataProduct
+    const {title, price, image, id} = dataProduct
     const {setQuantitySelected} = useContext(CartContext);
 
   return (    

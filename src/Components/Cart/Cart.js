@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-    const {cartProducts, removeFromCart, clear} = useContext(CartContext)
+    const {cartProducts, removeFromCart, clear, totalPrice} = useContext(CartContext)
 
     const handleRemoveItem =(id)=>{
       removeFromCart(id)
@@ -34,9 +34,13 @@ const Cart = () => {
               })
           }
         </div>
+        <div>
+          
+        </div>
         <div className="d-flex justify-content-center align-items-center">
           {cartProducts.length !== 0 ? 
           <div className="d-flex flex-row w-100 justify-content-evenly">
+            <p className='fs-3'>Precio final: {totalPrice}</p>
             <button className="agregarProductos d-flex flex-row justify-content-center align-items-center border-4 rounded-3" onClick={clear}><IoTrash/>Vaciar carrito</button> 
             <Link to={"/"} className="agregarProductos d-flex flex-row justify-content-center align-items-center border-4 rounded-3">Seguir comprando!</Link> 
             <button className="agregarProductos d-flex flex-row justify-content-center align-items-center border-4 rounded-3"><BsCartCheck/>Finalizar compra</button> 

@@ -8,23 +8,26 @@ const ItemDetailContainer = () => {
     
   const [productData, setProductData] = useState({})
 
-  const {id} = useParams()
 
-  const filterById = () => { 
+  const {id} = useParams() //devuelve string
 
-    products.some ( (product) => {              
-          if(product.id === id) {
-            setProductData(product)
-          }  
-      })
-  }
+  const filterById = products.find (product => product.id === Number(id) )
 
-  useEffect(() => {
-     filterById()
-  }, [])
+  console.log(filterById);
+
+
+  const getProduct = () => new Promise( (resolve, reject) => {
+    setTimeout( () => {resolve(filterById)}, 0)})
+
+  useEffect(() => {    
+    getProduct()
+      .then( (res) => {setProductData(res)})
+      .catch( (error) => {console.log("la llamada fallo")})
+}, [])
+
 
   return (
-        <ItemDetail dataProducts={productData} initial={1}/>            
+        <ItemDetail dataProducts={productData}/>            
 )
 }
 
