@@ -1,8 +1,10 @@
 import ItemList from "../ItemList/ItemList";
-import products from "../Utils/products.mock";
 import  "./ItemListContainer.sass";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import { collection, getDocs} from "firebase/firestore";
+import db  from "../../firebaseConfig";
+
 
 const ItemListContainer = () => {
 
@@ -10,27 +12,23 @@ const ItemListContainer = () => {
 
   const {category} = useParams()
 
-  const filterByCategory = products.filter( (product)=> product.category === category)
-
-  const getProducts = new Promise( (resolve, reject) => {
-      setTimeout( () => {
-          if(category === "Tortas" || category === "Postres" || category === "Alfajores" || category === "Salado") {
-              resolve(filterByCategory)
-          } else {
-            resolve(products)
-          }
-      }, 200)
-  })
+  const getProducts= async () => {
+    const productCollection = collection(db ,'productos')
+    const productSnapshot =  await getDocs(productCollection)
+    const productList = productSnapshot.docs.map((doc)=>{
+      let product = doc.data()
+      product.id = doc.id
+      return product
+    })    
+    return productList
+  }
 
   useEffect(() => {
-      getProducts
-          .then( (res) => { 
-              setListProducts(res)
-          })
-          .catch( (error) => { 
-              console.log("la llamada fallo")
-          })
-  }, [category])
+    getProducts() 
+      .then(  (res) =>{
+        setListProducts(res)
+     }
+  )},[])
 
   const tituloLista = category === undefined ? "Productos" : category
 

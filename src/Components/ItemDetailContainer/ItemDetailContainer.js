@@ -1,29 +1,29 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
-import products from "../Utils/products.mock";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import  db  from "../../firebaseConfig";
 
 
 const ItemDetailContainer = () => {
     
   const [productData, setProductData] = useState({})
-
-
   const {id} = useParams() //devuelve string
 
-  const filterById = products.find (product => product.id === Number(id) )
+  const getProduct = async () =>{
+    const docRef = doc(db, 'productos', id)
+    const docSnapshot = await getDoc(docRef)
+        let product = docSnapshot.data()
+        product.id = docSnapshot.id    
+    return product
+  }
 
-  console.log(filterById);
-
-
-  const getProduct = () => new Promise( (resolve, reject) => {
-    setTimeout( () => {resolve(filterById)}, 0)})
 
   useEffect(() => {    
     getProduct()
       .then( (res) => {setProductData(res)})
       .catch( (error) => {console.log("la llamada fallo")})
-}, [])
+}, [id])
 
 
   return (

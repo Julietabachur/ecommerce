@@ -12,7 +12,6 @@ const Cart = () => {
 
     const handleRemoveItem =(id)=>{
       removeFromCart(id)
-      console.log(cartProducts);
     }
 
 
