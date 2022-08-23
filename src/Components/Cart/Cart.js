@@ -19,13 +19,14 @@ const Cart = () => {
     <>
         <div className="d-flex flex-column align-items-center justify-content-start m-5">
           {cartProducts.map((product)=>{
+             const {title, imagenPrincipal, price, id, quantity} = product
               return (
-              <div key={product.id} className="d-flex flex-row w-100 justify-content-evenly carrito p-3">
-                <Link to={"/productos/:id"} ><img src={product.imagenPrincipal} alt="no disponible" className='imagenCart'/></Link>
+              <div key={id} className="d-flex flex-row w-100 justify-content-evenly carrito p-3">
+                <Link to={"/productos/:id"} ><img src={imagenPrincipal} alt="no disponible" className='imagenCart'/></Link>
                   <div className="d-flex flex-row justify-content-around align-items-center w-100 flex-wrap">
-                    <Link to={"/productos/:id"}><p className='fs-4'>{product.title}</p></Link>                    
-                    <p className='fs-4'>Precio: ${product.price}</p>
-                    <p className='fs-4'>Subtotal: ${product.price*product.quantity}</p>
+                    <Link to={"/productos/:id"}><p className='fs-4'>{title}</p></Link>                    
+                    <p className='fs-4'>Precio: ${price}</p>
+                    <p className='fs-4'>Subtotal: ${price*quantity}</p>
                     <button className="d-flex flex-row justify-content-center align-items-center botones border-4 rounded-3" onClick={()=>handleRemoveItem(product.id)}><IoTrash/>Eliminar producto</button>                      
                   </div>
               </div>)
