@@ -17,17 +17,16 @@ const Cart = () => {
 
   return (
     <>
-        <div className="d-flex flex-column align-items-center justify-content-start  p-5">
+        <div className="d-flex flex-column align-items-center justify-content-start m-5">
           {cartProducts.map((product)=>{
               return (
-              <div key={product.id} className="d-flex flex-row w-100 justify-content-evenly m-3 border border-3 border-dark carrito ">
-                  <img src={product.image} alt="no disponible"/>
+              <div key={product.id} className="d-flex flex-row w-100 justify-content-evenly carrito p-3">
+                <Link to={"/productos/:id"} ><img src={product.imagenPrincipal} alt="no disponible" className='imagenCart'/></Link>
                   <div className="d-flex flex-row justify-content-around align-items-center w-100 flex-wrap">
-                    <p className='fs-3' >{product.title}</p>
-                    <p className='fs-3' >U:${product.price}</p>
-                    <p className='fs-3' >Cantidad: {product.quantity}</p>
-                    <p className='fs-3'> Total por producto: ${product.price*product.quantity}</p>
-                    <button className="d-flex flex-row justify-content-center align-items-center botones border border-light border-4 rounded-3" onClick={()=>handleRemoveItem(product.id)}><IoTrash/>Eliminar producto</button>                      
+                    <Link to={"/productos/:id"}><p className='fs-4'>{product.title}</p></Link>                    
+                    <p className='fs-4'>Precio: ${product.price}</p>
+                    <p className='fs-4'>Subtotal: ${product.price*product.quantity}</p>
+                    <button className="d-flex flex-row justify-content-center align-items-center botones border-4 rounded-3" onClick={()=>handleRemoveItem(product.id)}><IoTrash/>Eliminar producto</button>                      
                   </div>
               </div>)
               })
@@ -38,16 +37,18 @@ const Cart = () => {
         </div>
         <div className="d-flex justify-content-center align-items-center">
           {cartProducts.length !== 0 ? 
-          <div className="d-flex flex-row w-100 justify-content-evenly">
-            <p className='fs-3'>Precio final: {totalPrice}</p>
-            <button className="agregarProductos d-flex flex-row justify-content-center align-items-center border-4 rounded-3" onClick={clear}><IoTrash/>Vaciar carrito</button> 
-            <Link to={"/"} className="agregarProductos d-flex flex-row justify-content-center align-items-center border-4 rounded-3">Seguir comprando!</Link> 
-            <button className="agregarProductos d-flex flex-row justify-content-center align-items-center border-4 rounded-3"><BsCartCheck/>Finalizar compra</button> 
+          <div className="d-flex flex-column w-100 justify-content-evenly align-items-center">
+            <p className='fs-4 m-3 precio'>Precio final: ${totalPrice}</p>
+            <div className="d-flex flex-row w-100 justify-content-evenly align-items-center">
+              <button className="botones d-flex flex-row justify-content-center align-items-center border-4 rounded-3" onClick={clear}><IoTrash/>Vaciar carrito</button> 
+              <Link to={"/"} className="botones d-flex flex-row justify-content-center align-items-center border-4 rounded-3">Seguir comprando!</Link> 
+              <button className="botones d-flex flex-row justify-content-center align-items-center border-4 rounded-3"><BsCartCheck/>Finalizar compra</button> 
+            </div>
           </div>          
           :
           <div className="d-flex flex-column justify-content-center align-items-center">
           <p className="d-2">Tu carrito esta vacío</p> 
-          <Link to={"/"} className="agregarProductos">Agregar productos</Link> 
+          <Link to={"/"} className="botones">Agregar productos</Link> 
           </div>
           }
         </div>

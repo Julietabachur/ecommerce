@@ -10,12 +10,12 @@ const Item = ({dataProduct}) => {
     const {setQuantitySelected} = useContext(CartContext);
 
   return (    
-        <div className="card flex-col align-items-center m-4 p-2 justify-content-between flex-wrap border-white border-3 rounded-3">
+        <div className="card flex-col align-items-center m-4 p-2 justify-content-between flex-wrap border-1 rounded-3">
             <Link to={`/productos/${id}`} className="linkItem" >
                 <img src={`/${imagenPrincipal}`} alt="Imagen producto"/>
-                <p className="fw-bold text-white">{title}</p>
+                <p className="fw-semibold">{title}</p>
             </Link>            
-            <span className="fw-bold text-white">$ {price}</span>  
+            <span className="fw-bold">$ {price}</span>  
             <ItemCount setQuantitySelected={setQuantitySelected} productData={dataProduct}/>   
         </div>
   )
