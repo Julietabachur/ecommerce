@@ -1,18 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoTrash } from 'react-icons/io5';
 import { BsCartCheck } from 'react-icons/bs';
 import { useContext } from "react"
 import {CartContext} from "../../Context/CartContext"
 import './Cart.sass'
 import { Link } from 'react-router-dom';
+import Modal from '../Modal/Modal';
 
 const Cart = () => {
 
-    const {cartProducts, removeFromCart, clear, totalPrice} = useContext(CartContext)
+  const {cartProducts, removeFromCart, clear, totalPrice} = useContext(CartContext)
+  
+    const [formData, setFormData] = useState({
+      name: "",
+      phone:"",
+      email:""
+    })
+
+    const [showModal, setShowModal] = useState(false)
+    const [order, setOrder] = useState(
+      {
+        items:cartProducts.map((product) => {
+          return{
+            id:product.id,
+            title:product.title,
+            price:product.price,
+            quantity:product.quantity,
+            subtotalPrice:product.price * product.quantity
+          }
+        }),
+        buyer:{},
+        date:new Date().toLocaleString(),
+        total:totalPrice
+      }
+    )
+
 
     const handleRemoveItem =(id)=>{
       removeFromCart(id)
     }
+
+    const handleChange =(e)=>{
+      e.preventDefault()
+      setFormData({...formData, [e.target.name]:e.target.value})
+    }
+
+
 
 
   return (
@@ -43,7 +76,7 @@ const Cart = () => {
             <div className="d-flex flex-row w-100 justify-content-evenly align-items-center">
               <button className="botones d-flex flex-row justify-content-center align-items-center border-4 rounded-3" onClick={clear}><IoTrash/>Vaciar carrito</button> 
               <Link to={"/"} className="botones d-flex flex-row justify-content-center align-items-center border-4 rounded-3">Seguir comprando!</Link> 
-              <button className="botones d-flex flex-row justify-content-center align-items-center border-4 rounded-3"><BsCartCheck/>Finalizar compra</button> 
+              <button className="botones d-flex flex-row justify-content-center align-items-center border-4 rounded-3" onClick={()=>setShowModal(true)}><BsCartCheck/>Finalizar compra</button> 
             </div>
           </div>          
           :
@@ -53,6 +86,17 @@ const Cart = () => {
           </div>
           }
         </div>
+        {
+          showModal &&
+        <Modal title="Datos de contacto" close={()=>setShowModal()}>
+          <h3>Formulario</h3>
+          <form>
+            <input type="text" name="name" placeholder="Nombre y apellido" value={formData.name} onChange={handleChange()}/>
+            <input type="phone" name="phone" placeholder="Telefono o celular" value={formData.phone} onChange={handleChange()}/>
+            <input type="email" name="email" placeholder="email" value={formData.email} onChange={handleChange()}/>
+          </form>
+        </Modal>
+        }
     </>
   )
 }
