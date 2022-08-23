@@ -2,39 +2,31 @@ import ItemList from "../ItemList/ItemList";
 import  "./ItemListContainer.sass";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import { collection, getDocs} from "firebase/firestore";
+import { collection, getDocs, query, where} from "firebase/firestore";
 import db  from "../../firebaseConfig";
-
 
 const ItemListContainer = () => {
 
   const [listProducts, setListProducts] = useState([])
-
   const {category} = useParams()
 
-  const getProducts= async () => {
-    const productCollection = collection(db ,'productos')
-    const productSnapshot =  await getDocs(productCollection)
-    const productList = productSnapshot.docs.map((doc)=>{
-      let product = doc.data()
-      product.id = doc.id
-      return product
-    })    
-    return productList
-  }
-
-  useEffect(() => {
-    getProducts() 
-      .then(  (res) =>{
-        setListProducts(res)
-     }
-  )},[])
+  useEffect(()=>{
+    const queryCollection = collection(db,"productos")
+    if (category){
+        const queryFilter= query(queryCollection, where("category" , "==", category))
+        getDocs(queryFilter)
+        .then(res =>setListProducts (res.docs.map(product =>({id: product.id, ...product.data()}))))
+    } else{
+    getDocs(queryCollection)
+    .then(res =>setListProducts (res.docs.map(product =>({id: product.id, ...product.data()}))))
+    }
+},[category])
 
   const tituloLista = category === undefined ? "Productos" : category
 
   return (
     <div className="d-flex flex-column justify-content-center flex-wrap">
-        <h1 className="display-1 d-flex justify-content-center">{`${tituloLista}`}</h1>
+        <h1 className="display-3 d-flex justify-content-center">{`${tituloLista}`}</h1>
         <ItemList dataProducts={listProducts} />
     </div>
   )

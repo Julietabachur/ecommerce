@@ -5,7 +5,7 @@ import "./Home.sass"
 const Home = () => {
   return (
     <div>
-        <h1 className="d-flex flex-row justify-content-center m-2">Bienvenidos a mi tienda!</h1>
+        <h1 className="d-flex flex-row justify-content-center m-2 display-1">Bienvenidos a mi tienda!</h1>
         {/* <div id="carouselExampleIndicators" className="carousel slide d-flex justify-content-center" data-bs-ride="true">
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
