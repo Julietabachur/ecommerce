@@ -11,27 +11,30 @@ const ItemDetail = ({dataProducts}) => {
   const { quantitySelected, setQuantitySelected} = useContext(CartContext);
 
   return (         
-        <div key={id} className="d-flex flex-row align-items-center justify-content-around m-5 contenedor-detail">   
+        <div key={id} className="d-flex flex-row flex-wrap align-items-center justify-content-around m-5 contenedor-detail">   
           <div className="d-flex flex-column justify-content-center align-items-center">
             <img src={`/${imagenPrincipal}`}  className="foto-principal" alt="no disponible"/>   
             <div className="d-flex flex-row justify-content-around fotos m-3"> 
-              {/* {
-                imagenes.forEach((image) =>{    
-                  return (   
-                  <img src={`/${image}`} className="foto-secundaria" alt="no disponible"/>
-                  )
+              { imagenes && 
+                imagenes.length > 0 && imagenes.map((image, index) =>{    
+                  <img src={`/${image}`} key={index} className="foto-secundaria" alt="no disponible"/>
                 })              
-              }  */}
+              } 
             </div>               
           </div>           
-          <div className=" d-flex flex-column align-items-center justify-content-around border border-3 rounded-3 p-5">
-            <h2 className="display-1 m-2">{title}</h2>
-            <p className="info d-flex justify-content-center lead text-center">{description}</p>
-            <div className="d-flex flex-row align-items-center justify-content-around w-100">
+          <div className=" d-flex flex-column align-items-center justify-content-around border border-3 rounded-3 p-5 h-100">
+            <h2 className="display-1 m-2 text-center">{title}</h2>
+            <p className="info d-flex justify-content-center lead text-center my-3">{description}</p>
+            <div className="d-flex flex-row align-items-center justify-content-around w-75">
               <span className="fw-semibold">Stock: {stock}</span>
               <span className="fw-semibold">Precio: ${price}</span>
             </div>
-            {quantitySelected > 0 ? <Link to="/cart"><button>TERMINAR MI COMPRA</button></Link> : <ItemCount setQuantitySelected={setQuantitySelected} productData={dataProducts}/>}            
+            {quantitySelected > 0 ? 
+            <div className="d-flex flex-column align-items-center justify-content-around p-3">
+              <ItemCount setQuantitySelected={setQuantitySelected} productData={dataProducts}/>
+              <Link to="/cart"><button className="botones">TERMINAR MI COMPRA</button></Link>
+            </div>
+             : <ItemCount setQuantitySelected={setQuantitySelected} productData={dataProducts}/>}            
           </div>
           
         </div>            
