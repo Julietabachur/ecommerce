@@ -10,8 +10,8 @@ const {totalProducts} = useContext(CartContext);
   return (
     <nav className="navbar navbar-expand-lg nav p-3">
         <div className="container-fluid">
+            <Link to={"/"} className="navbar-brand" >Dolce Julieta</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <Link to={"/"} className="navbar-brand" >Dolce Julieta</Link>
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
@@ -21,7 +21,7 @@ const {totalProducts} = useContext(CartContext);
                     </li>
                     <li className="nav-item d-flex justify-content-center align-items-center">
                         <div className="btn-group">
-                            <button type="button" class="btn"><Link to={"/"} className="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</Link></button>
+                            <button type="button" className="btn"><Link to={"/"} className="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</Link></button>
                             <button type="button" className="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
                                 <span className="visually-hidden">Toggle Dropdown</span>
                             </button>
@@ -37,7 +37,7 @@ const {totalProducts} = useContext(CartContext);
                         <Link to={"/contacto"} className="nav-link">Contacto</Link>
                     </li>
                     <li className="nav-item d-flex justify-content-center align-items-center">
-                        <Link to={"/Cart"}  className="nav-link"><CartWidget/></Link>
+                        <Link to={"/Cart"}  className="nav-link d-flex justify-content-center align-items-center"><CartWidget/></Link>
                     </li>            
                 </ul>
             </div>

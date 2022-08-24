@@ -6,6 +6,8 @@ import {CartContext} from "../../Context/CartContext"
 import './Cart.sass'
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/Modal';
+import { collection, addDoc} from "firebase/firestore";
+import db  from "../../firebaseConfig";
 
 const Cart = () => {
 
@@ -17,6 +19,7 @@ const Cart = () => {
       email:""
     })
 
+    const [success, setSuccess] = useState()
     const [showModal, setShowModal] = useState(false)
     const [order, setOrder] = useState(
       {
@@ -40,12 +43,21 @@ const Cart = () => {
       removeFromCart(id)
     }
 
-    const handleChange =(e)=>{
-      e.preventDefault()
-      setFormData({...formData, [e.target.name]:e.target.value})
+    
+    const pushData= async(newOrder)=>{
+      const collectionOrder = collection(db,"ordenes")
+      const orderDoc = await addDoc(collectionOrder, newOrder)
+      setSuccess(orderDoc.id)
     }
-
-
+    
+    const submitData = (e)=>{
+      e.preventDefault()
+      pushData({...order, buyer: formData})
+    }
+    
+    const handleChange =(e)=>{
+      setFormData({...formData, [e.target.name]: e.target.value})
+    }
 
 
   return (
@@ -65,9 +77,6 @@ const Cart = () => {
               </div>)
               })
           }
-        </div>
-        <div>
-          
         </div>
         <div className="d-flex justify-content-center align-items-center">
           {cartProducts.length !== 0 ? 
@@ -89,12 +98,41 @@ const Cart = () => {
         {
           showModal &&
         <Modal title="Datos de contacto" close={()=>setShowModal()}>
-          <h3>Formulario</h3>
-          <form>
-            <input type="text" name="name" placeholder="Nombre y apellido" value={formData.name} onChange={handleChange()}/>
-            <input type="phone" name="phone" placeholder="Telefono o celular" value={formData.phone} onChange={handleChange()}/>
-            <input type="email" name="email" placeholder="email" value={formData.email} onChange={handleChange()}/>
-          </form>
+          { success ? (
+            <>
+              <h2>Su orden se genero exitosamente</h2>
+              <p>El id de su orden es: {success}</p>
+            </>
+          ) : (
+              <>
+                <h3>Formulario</h3>
+                <form onSubmit={submitData}>
+                  <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Nombre y apellido" 
+                    value={formData.name} 
+                    onChange={handleChange}
+                  />
+                  <input 
+                    type="phone" 
+                    name="phone" 
+                    placeholder="Telefono o celular" 
+                    value={formData.phone} 
+                    onChange={handleChange}
+                  />
+                  <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="email" 
+                    value={formData.email} 
+                    onChange={handleChange}
+                  />
+                  <button type='submit'>ENVIAR</button>
+                </form>
+              </>
+          )
+          }
         </Modal>
         }
     </>

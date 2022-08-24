@@ -16,14 +16,14 @@ const ItemDetail = ({dataProducts}) => {
             <img src={`/${imagenPrincipal}`}  className="foto-principal" alt="no disponible"/>   
             <div className="d-flex flex-row justify-content-around fotos m-3"> 
               { imagenes && 
-                imagenes.length > 0 && imagenes.map((image, index) =>{    
-                  <img src={`/${image}`} key={index} className="foto-secundaria" alt="no disponible"/>
-                })              
+                imagenes.length > 0 && imagenes.map((image, index) =>(    
+                  <img src={`/${image}`} key={index} className="foto-secundaria" alt=""/>
+                ))              
               } 
             </div>               
           </div>           
           <div className=" d-flex flex-column align-items-center justify-content-around border border-3 rounded-3 p-5 h-100">
-            <h2 className="display-1 m-2 text-center">{title}</h2>
+            <h2 className="display-3 m-2 text-center">{title}</h2>
             <p className="info d-flex justify-content-center lead text-center my-3">{description}</p>
             <div className="d-flex flex-row align-items-center justify-content-around w-75">
               <span className="fw-semibold">Stock: {stock}</span>

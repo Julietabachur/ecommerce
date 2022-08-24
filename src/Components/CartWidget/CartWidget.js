@@ -7,10 +7,10 @@ import {CartContext} from "../../Context/CartContext"
 const CartWidget = () => {
   const { totalProducts, cartProducts} = useContext(CartContext);
   return (
-    <div className='d-flex flex-row'>
+    <div className='d-flex flex-row d-flex justify-content-center align-items-center'>
       { cartProducts.length !== 0 && 
       <>
-      <p>{totalProducts}</p> <TbShoppingCart size={20}/>
+      <p className='d-flex flex-row d-flex justify-content-center align-items-center'>{totalProducts}</p> <TbShoppingCart size={20}/>
       </>
       }    
     </div>         
