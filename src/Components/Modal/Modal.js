@@ -3,11 +3,11 @@ import { RiCloseLine } from "react-icons/ri";
 
 import React from 'react'
 
-const Modal = (title, close, children) => {
+const Modal = ({title, close, children}) => {
   return (
     <div>
         <h2>{title}</h2>
-        <RiCloseLine/>
+        <RiCloseLine onClick={() => close(false)}/>
         {children}
     </div>
   )

@@ -42,7 +42,6 @@ const Cart = () => {
     const handleRemoveItem =(id)=>{
       removeFromCart(id)
     }
-
     
     const pushData= async(newOrder)=>{
       const collectionOrder = collection(db,"ordenes")
