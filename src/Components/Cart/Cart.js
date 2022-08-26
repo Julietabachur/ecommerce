@@ -101,6 +101,22 @@ const Cart = () => {
             <>
               <h2>Su orden se genero exitosamente</h2>
               <p>El id de su orden es: {success}</p>
+              <div className="d-flex flex-column align-items-center justify-content-start m-5">
+                  {cartProducts.map((product)=>{
+                    const {title, imagenPrincipal, price, id, quantity} = product
+                      return (
+                      <div key={id} className="d-flex flex-row w-100 justify-content-evenly carrito p-3">
+                        <img src={imagenPrincipal} alt="no disponible" className='imagenCart'/>
+                          <div className="d-flex flex-row justify-content-around align-items-center w-100 flex-wrap">
+                            <p className='fs-4'>{title}</p>                   
+                            <p className='fs-4'>Precio: ${price}</p>
+                            <p className='fs-4'>Subtotal: ${price*quantity}</p>
+                          </div>                          
+                      </div>)
+                      })
+                  }
+              </div>
+              <p className='fs-4 m-3 precio'>Precio final: ${totalPrice}</p>
             </>
           ) : (
               <>
