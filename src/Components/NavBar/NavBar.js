@@ -17,7 +17,7 @@ const {totalProducts} = useContext(CartContext);
             <div className="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
                 <ul className="navbar-nav mb-2 mb-lg-0">
                     <li className="nav-item d-flex justify-content-center align-items-center">
-                        <Link to={"/"} className="nav-link" >Home</Link>
+                        <Link to={"/"} className="nav-link">Home</Link>
                     </li>
                     <li className="nav-item d-flex justify-content-center align-items-center">
                         <div className="btn-group">
