@@ -63,10 +63,10 @@ const Cart = () => {
     <>
         <div className="d-flex flex-column align-items-center justify-content-start m-5">
           {cartProducts.map((product)=>{
-             const {title, imagenPrincipal, price, id, quantity} = product
+             const {title, imagenes, price, id, quantity} = product
               return (
               <div key={id} className="d-flex flex-row w-100 justify-content-evenly carrito p-3">
-                <Link to={`/productos/${id}`} ><img src={imagenPrincipal} alt="no disponible" className='imagenCart'/></Link>
+                <Link to={`/productos/${id}`} ><img src={imagenes[0]} alt="no disponible" className='imagenCart'/></Link>
                   <div className="d-flex flex-row justify-content-around align-items-center w-100 flex-wrap">
                     <Link to={`/productos/${id}`}><p className='fs-4'>{title}</p></Link>                    
                     <p className='fs-4'>Precio: ${price}</p>

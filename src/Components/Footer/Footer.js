@@ -13,7 +13,16 @@ const Footer = () => {
                     <Link to={"/"} className="nav-link">Home</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to={"/productos"} className="nav-link" >Productos</Link>
+                    <Link className="nav-link" to={"/category/Tortas"}>Tortas</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to={"/category/Alfajores"}>Alfajores</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to={"/category/Salado"}>Salado</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to={"/category/Postres"}>Postres</Link>
                 </li>
                 <li className="nav-item">
                     <Link to={"/contacto"} className="nav-link">Contacto</Link>
@@ -21,12 +30,12 @@ const Footer = () => {
             </ul>
         </div>
         <div>   
-            <p className='fw-bold'>Dolce Julieta</p>
-            <p> <span className='fw-bold'>Ubicacion: </span>Villa Pueyrredon, CABA.</p>
+            <p className='fw-bold fs-3'>Dolce Julieta</p>
+            <p> <span className='fw-bold fs-4'>Ubicacion: </span>Villa Pueyrredon, CABA.</p>
             <p></p>
         </div>
         <div className='redes'>   
-            <p>Seguinos</p>
+            <p  className='fs-3'>Seguinos</p>
             <div className='d-flex justify-content-between'>  
                 <a href="wa.me/message/62F5GOV6W3RBA1"  target="_blank" className='logos'><BsWhatsapp/></a>
                 <a href="https://www.instagram.com/dolcejulieta.patisserie/" target="_blank" className='logos'><BsInstagram/></a>

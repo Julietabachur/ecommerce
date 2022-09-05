@@ -7,7 +7,7 @@ import Modal from "../Modal/Modal"
 
 const ItemDetail = ({dataProducts}) => {
   
-  const {id,title,price,imagenPrincipal,imagenes,stock,description} = dataProducts
+  const {id,title,price,imagenes,stock,description} = dataProducts
 
   const [showModal, setShowModal] = useState(false)
 
@@ -16,7 +16,7 @@ const ItemDetail = ({dataProducts}) => {
   return (         
         <div key={id} className="d-flex flex-row flex-wrap align-items-start justify-content-around m-5 contenedor-detail">   
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <img src={`/${imagenPrincipal}`} onClick={()=> setShowModal(true)} className="foto-principal" alt="no disponible"/>   
+            <img src={`/${imagenes[0]}`} onClick={()=> setShowModal(true)} className="foto-principal" alt="no disponible"/>   
             <div className="d-flex flex-row justify-content-around fotos m-3"> 
               { imagenes && 
                 imagenes.length > 0 && imagenes.map((image, index) =>(    
@@ -41,8 +41,6 @@ const ItemDetail = ({dataProducts}) => {
           </div>
           {
             showModal &&
-
-            imagenes.unshift(imagenPrincipal) &&
 
           <Modal title="Fotos del producto" close={()=>setShowModal()}>
             <div className="modal" tabindex="-1">
