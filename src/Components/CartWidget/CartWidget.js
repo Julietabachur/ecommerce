@@ -25,7 +25,7 @@ const CartWidget = () => {
         }    
         {showModal && 
         
-          <Modal title="Carrito" close={setShowModal}>
+          <Modal title="Carrito" close={setShowModal} className="modal-custom">
             {cartProducts.map((product)=>{
               const {title, imagenes, price, id, quantity} = product
                 return (
