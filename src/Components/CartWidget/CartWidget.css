@@ -1,1 +1,22 @@
-/*# sourceMappingURL=CartWidget.css.map */
+.carrito {
+  color: white !important;
+}
+
+p {
+  margin: 0;
+}
+
+.modal-custom {
+  position: fixed;
+  z-index: 1;
+  top: 70%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 25vw;
+  height: 25vh;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2784313725);
+  border-radius: 5px;
+  padding: 20px;
+  overflow: hidden;
+}/*# sourceMappingURL=CartWidget.css.map */

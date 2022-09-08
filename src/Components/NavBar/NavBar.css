@@ -1,7 +1,25 @@
-.nav {
-  background-color: pink;
+nav {
+  background-color: salmon !important;
 }
-.nav a {
-  color: white;
-  font-weight: bold;
+nav a {
+  color: white !important;
+  font-weight: semi-bold !important;
+}
+
+.dropdown-menu {
+  background-color: salmon !important;
+}
+
+.nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  color: white !important;
+  border: none !important;
+}
+.dropdown-item:hover {
+  border: none !important;
+  background-color: rgba(255, 71, 71, 0.5) !important;
 }/*# sourceMappingURL=NavBar.css.map */

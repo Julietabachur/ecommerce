@@ -1,4 +1,8 @@
- {
-  width: 8rem;
-  height: 10rem;
+.botones {
+  border: 1px solid salmon !important;
+  color: salmon !important;
+}
+.botones:hover {
+  background-color: salmon !important;
+  color: white !important;
 }/*# sourceMappingURL=ItemCount.css.map */

@@ -1,0 +1,46 @@
+.carousel {
+  background-color: lightgrey;
+}
+
+.foto-secundaria {
+  width: 20rem;
+  height: 20rem;
+}
+
+.info {
+  width: 30rem;
+}
+
+.precio {
+  font-size: 5rem;
+  font-weight: semibold;
+}
+
+.border {
+  border: gray;
+}
+
+.botones {
+  border: 1px solid salmon !important;
+  color: salmon !important;
+}
+.botones:hover {
+  background-color: salmon !important;
+  color: white !important;
+}
+
+.carousel-inner {
+  width: 50%;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  fill: hotpink;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevron-left' width='48' height='48' viewBox='0 0 24 24' stroke-width='5' stroke='%23FF69B4' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='15 6 9 12 15 18' /%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevron-right' width='48' height='48' viewBox='0 0 24 24' stroke-width='5' stroke='%23FF69B4' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='9 6 15 12 9 18' /%3E%3C/svg%3E");
+}/*# sourceMappingURL=ItemDetail.css.map */
