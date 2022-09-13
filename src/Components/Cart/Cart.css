@@ -34,4 +34,12 @@
 
 .precio {
   color: salmon !important;
+}
+
+.formulario {
+  width: 30rem;
+}
+
+.modal-custom {
+  overflow-y: scroll !important;
 }/*# sourceMappingURL=Cart.css.map */
