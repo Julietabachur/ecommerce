@@ -1,21 +1,21 @@
 # Dolce Julieta - Tienda de pasteleria
 
-## Historia
+Dolce Julieta es mi emprendimiento de pastelería. En este sitio vas a poder visualizar mis productos, su descripcion, precios y generar un pedido.
 
-Mi nombre es Julieta. Soy pastelera y estudiante de Desarrollo Frontend React y estoy aprovechando esta oportunidad para finalmente crear un ecommerce para mi propio emprendimiento.
+### Instalación 💫
 
-### `Bootstrap`
+Para ver el proyecto debes clonarlo https://github.com/Julietabachur/ecommerce.git
 
-Para agilizar el diseño utilicé Bootstrap.
+### Dependencias 🎨
 
-### `React Icons`
-
-También instalé React-Icons para que mi siio se vea más divertido!
-
-### `React-Router-Dom`
-
-Lo instalé para que mi sitio sea navegable.
+Utilicé `Bootstrap`, `React-Icons` y `Storage de Firebase` para almacenar los productos y las compras.
 ### `Asi se navega mi ecommerce`
 
 ![image](https://github.com/Julietabachur/ecommerce/blob/main/public/img/gif.gif)
 
+
+### Hecho con ❤ por **Julieta Bachur**
+
+
+
+* *Frontend React Developer*   [Julieta Bachur - LinkedIn](https://www.linkedin.com/in/julietabachurcicconi/)

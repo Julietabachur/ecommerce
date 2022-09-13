@@ -65,10 +65,11 @@ const Cart = () => {
           {cartProducts.map((product)=>{
              const {title, imagenes, price, id, quantity} = product
               return (
-              <div key={id} className="d-flex flex-row w-100 justify-content-evenly carrito p-3">
+              <div key={id} className="d-flex flex-row w-100 justify-content-evenly carrito p-3 m-3">
                 <Link to={`/productos/${id}`} ><img src={imagenes[0]} alt="no disponible" className='imagenCart'/></Link>
                   <div className="d-flex flex-row justify-content-around align-items-center w-100 flex-wrap">
                     <Link to={`/productos/${id}`}><p className='fs-4'>{title}</p></Link>                    
+                    <p className='fs-4'>Cant.: {quantity}</p>
                     <p className='fs-4'>Precio: ${price}</p>
                     <p className='fs-4'>Subtotal: ${price*quantity}</p>
                     <button className="d-flex flex-row justify-content-center align-items-center botones border-4 rounded-3" onClick={()=>handleRemoveItem(product.id)}><IoTrash/>Eliminar producto</button>                      
@@ -96,56 +97,61 @@ const Cart = () => {
         </div>
         {
           showModal &&
-        <Modal title="Datos de contacto" close={()=>setShowModal()}>
+        <Modal title="Datos de contacto" close={()=>setShowModal()} className="modal-custom">
           { success ? (
             <>
               <h2>Su orden se genero exitosamente</h2>
               <p>El id de su orden es: {success}</p>
-              <div className="d-flex flex-column align-items-center justify-content-start m-5">
+              <div className="d-flex flex-column align-items-center justify-content-start my-5">
                   {cartProducts.map((product)=>{
-                    const {title, imagenPrincipal, price, id, quantity} = product
+                    const {title, imagenes, price, id, quantity} = product
                       return (
-                      <div key={id} className="d-flex flex-row w-100 justify-content-evenly carrito p-3">
-                        <img src={imagenPrincipal} alt="no disponible" className='imagenCart'/>
+                      <div key={id} className="d-flex flex-row w-100 justify-content-evenly carrito p-3 m-3">
+                        <img src={imagenes[0]} alt="no disponible" className='imagenCart'/>
                           <div className="d-flex flex-row justify-content-around align-items-center w-100 flex-wrap">
-                            <p className='fs-4'>{title}</p>                   
-                            <p className='fs-4'>Precio: ${price}</p>
-                            <p className='fs-4'>Subtotal: ${price*quantity}</p>
+                            <p className='fs-4 mx-5'>{title}</p>    
+                            <p className='fs-4 mx-5'>Cant.: {quantity}</p>               
+                            <p className='fs-4 mx-5'>Precio: ${price}</p>
+                            <p className='fs-4 mx-5'>Subtotal: ${price*quantity}</p>
                           </div>                          
                       </div>)
                       })
                   }
               </div>
               <p className='fs-4 m-3 precio'>Precio final: ${totalPrice}</p>
+              <Link to={"/"}><button className="botones border-3 rounded-5 my-5" type='submit'>Finalizar</button></Link> 
             </>
           ) : (
-              <>
-                <h3>Formulario</h3>
-                <form onSubmit={submitData}>
+              <div className="d-flex flex-column justify-content-start align-items-center mt-5 ">
+                <h3 className="my-3" >Formulario</h3>
+                <form onSubmit={submitData} className="d-flex flex-column justify-content-start align-items-center formulario">
                   <input 
                     type="text" 
                     name="name" 
                     placeholder="Nombre y apellido" 
                     value={formData.name} 
                     onChange={handleChange}
+                    className="form-control my-2 "
                   />
                   <input 
                     type="phone" 
                     name="phone" 
-                    placeholder="Telefono o celular" 
+                    placeholder="Telefono" 
                     value={formData.phone} 
                     onChange={handleChange}
+                    className="form-control my-2 "
                   />
                   <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="email" 
+                    type="Email" 
+                    name="Email" 
+                    placeholder="Email" 
                     value={formData.email} 
                     onChange={handleChange}
+                    className="form-control my-2 "
                   />
-                  <button type='submit'>ENVIAR</button>
+                  <button className="botones border-3 rounded-5 my-5" type='submit'>ENVIAR</button>
                 </form>
-              </>
+              </div>
           )
           }
         </Modal>
