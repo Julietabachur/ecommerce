@@ -12,7 +12,7 @@ const Item = ({dataProduct}) => {
   return (    
         <div className="card flex-col align-items-center m-4 p-2 justify-content-between flex-wrap border-1 rounded-3">
             <Link to={`/productos/${id}`} className="linkItem" >
-                <img src={`/${imagenes[0]}`} alt="Imagen producto"/>
+                <img src={`${imagenes[0]}`} alt="Imagen producto"/>
                 <p className="fw-semibold">{title}</p>
             </Link>            
             <span className="fw-bold">$ {price}</span>  

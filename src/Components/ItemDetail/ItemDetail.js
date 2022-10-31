@@ -17,7 +17,7 @@ const ItemDetail = ({dataProducts}) => {
             { imagenes && 
               imagenes.length > 0 && imagenes.map((image, index) =>(    
                 <div className="carousel-item active ">
-                  <img src={`/${image}`} key={index} className="foto-secundaria d-block" alt=""/>
+                  <img src={`${image}`} key={index} className="foto-secundaria d-block" alt=""/>
                 </div>
               ))              
             }        
