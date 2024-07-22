@@ -1,14 +1,17 @@
 .carousel
-    background-color: rgba(250,128,114 , 0.2)
+    /*background-color: rgba(250,128,114 , 0.2)*/
+    background-color: white
     width: 40rem !important
     height: 30rem !important
+    padding: 10px
+    /*border: solid 1px grey*/
 
 .foto-secundaria
     width: 30rem
     height: 30rem
 
 .info
-    width: 30rem
+    text-wrap: wrap
 
 .precio
     font-size: 5rem
@@ -25,13 +28,31 @@
         color: white !important
 
 .carousel-inner    
-    width: 50% !important
+    width: 70% !important
+    height: 99%
 
 .carousel-control-next-icon, .carousel-control-prev-icon 
   fill: hotpink
 
-.carousel-control-prev-icon 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevron-left' width='48' height='48' viewBox='0 0 24 24' stroke-width='5' stroke='%23FF69B4' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='15 6 9 12 15 18' /%3E%3C/svg%3E")
+.carousel .carousel-control-prev-icon 
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevron-left' width='48' height='48' viewBox='0 0 24 24' stroke-width='5' stroke='%23fa8072' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='15 6 9 12 15 18' /%3E%3C/svg%3E")
 
-.carousel-control-next-icon 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevron-right' width='48' height='48' viewBox='0 0 24 24' stroke-width='5' stroke='%23FF69B4' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='9 6 15 12 9 18' /%3E%3C/svg%3E")
+.carousel .carousel-control-next-icon 
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevron-right' width='48' height='48' viewBox='0 0 24 24' stroke-width='5' stroke='%23fa8072' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpolyline points='9 6 15 12 9 18' /%3E%3C/svg%3E")
+
+
+@media (max-width: 768px)
+    .carousel
+        width: 35rem !important
+        height: 25rem !important
+    .foto-secundaria
+        width: 25rem
+        height: 25rem
+
+@media (max-width: 576px)
+    .carousel
+        width: 30rem !important
+        height: 20rem !important
+    .foto-secundaria
+        width: 20rem
+        height: 20rem

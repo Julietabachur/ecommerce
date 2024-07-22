@@ -2,6 +2,10 @@ footer
     background-color: salmon !important
     color: white
     font-weight: semibold
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
         
 
 .redes
@@ -18,3 +22,8 @@ footer
 
 .ig:hover
      color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important
+
+@media (max-width: 607px)
+    footer
+        flex-direction: column
+        text-align: center
