@@ -35,16 +35,13 @@ const NavBar = () => {
             </li>
             <li className="nav-item d-flex justify-content-end justify-content-lg-center align-items-center">
               <div className="btn-group">
-                <button type="button" className="btn p-0 pe-2">
-                  <Link
-                    to={"/"}
-                    className="nav-link"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Productos
-                  </Link>
+                <button
+                  type="button"
+                  className="btn p-0 pe-2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Productos
                 </button>
                 <button
                   type="button"

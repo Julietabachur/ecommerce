@@ -42,7 +42,7 @@ const ItemDetail = ({ dataProducts }) => {
       </div>
       <div
         id="carouselExampleControls"
-        className="col-xl-6 carousel slide d-flex justify-content-center align-items-center  order-xl-0"
+        className="col-xl-6 carousel slide d-flex justify-content-center align-items-center  order-xl-0 mt-3 mt-lg-0"
         data-bs-ride="carousel"
       >
         <div className="carousel-inner">
